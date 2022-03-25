@@ -23,10 +23,39 @@
           integrity=
 "sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossorigin="anonymous" />
+      <script type="text/javascript">
+  // Wait for document to load
+  document.addEventListener("DOMContentLoaded", function(event) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  });
+</script>
+      <script type="text/javascript">
+  // Wait for document to load
+  document.addEventListener("DOMContentLoaded", function(event) {
+    document.documentElement.setAttribute("data-theme", "light");
+
+    // Get our button switcher
+    var themeSwitcher = document.getElementById("theme-switcher");
+
+    // When our button gets clicked
+    themeSwitcher.onclick = function() {
+      // Get the current selected theme, on the first run
+      // it should be `light`
+      var currentTheme = document.documentElement.getAttribute("data-theme");
+
+      // Switch between `dark` and `light`
+      var switchToTheme = currentTheme === "dark" ? "light" : "dark"
+
+      // Set our currenet theme to the new one
+      document.documentElement.setAttribute("data-theme", switchToTheme);
+    }
+  });
+</script>
   </head>
 <body>
     <section class="">
         <h1>qhatushoop Alpha 0.16</h1>
+          <button id="theme-switcher">Switch themes!</button>
         <div class="flex-box">
             <div class="row">
                 <div class="col">
